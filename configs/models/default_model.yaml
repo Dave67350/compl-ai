@@ -1,9 +1,10 @@
-name: "mistralai/Mistral-7B-Instruct-v0.1" 
+name: "mistralai/Mistral-7B-Instruct-v0.1"
 provider: "hf"
 type: "causal_lm"
-device: "auto"
+device: "cpu"  # Change to "cuda" if running on a GPU
+dtype: "float32"  # Explicitly set dtype to avoid precision issues
 padding_side: "left"
-batch_size: 20
+batch_size: 10  # Reduce batch size for CPU execution
 tokenizer_name: "mistralai/Mistral-7B-Instruct-v0.1"
 generation_args:
   do_sample: True
